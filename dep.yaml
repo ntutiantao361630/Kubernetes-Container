@@ -1,0 +1,19 @@
+apiVersion: myapp/v1
+kind: Deployment
+metadata:
+  name: webScrappinApp-deployment
+  labels:
+    app: python
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: python
+  template:
+    metadata:
+      labels:
+        app: python
+    spec:
+      containers:
+      - name: myapp
+        image: iantao199833/myapp
